@@ -78,7 +78,6 @@ export class ModalMutationComponent implements OnInit {
     this._service.findType("MarcaType")
       .subscribe(({ loading, data }) => {
         this.markList = data["__type"]['enumValues']
-        console.log("loadMarkType.,", this.markList)
 
       });
   }
@@ -87,8 +86,6 @@ export class ModalMutationComponent implements OnInit {
     this._service.findType("CombustivelType")
       .subscribe(({ loading, data }) => {
         this.fuelList = data["__type"]['enumValues']
-
-        console.log("loadFuelType.,", this.fuelList)
 
       });
   }

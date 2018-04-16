@@ -4,27 +4,18 @@ import { ModalMutationComponent } from './modal-mutation/modal-mutation.componen
 
 export const routing = RouterModule.forRoot([
 
-  { path: 'home',
+  {
+    path: 'home',
     component: HomeComponent,
-    children: [
+  },
 
-      // { path: 'modal',  component: ModalMutationComponent },
-
-    ]
-
-
-
- },
+  {
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    path: '**',
+    component: HomeComponent,
+  },
 
 ], { useHash: true });
-
-//
-// export const routing = RouterModule.forRoot([
-//   { path: '',  component: HomeComponent },
-//   {
-//     path: 'home',
-//     component: HomeComponent
-//   },
-//   { path: 'modal', component: ModalMutationComponent }
-//
-// ], { useHash: true });
