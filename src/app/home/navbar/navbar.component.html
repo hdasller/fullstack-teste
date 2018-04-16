@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1"><i class="fas fa-tint"></i><span>fullstack</span></span>
+  <span>
+      <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="BUSCA por um veículo" aria-label="Search">
+    </form> -->
+      <form [formGroup]="coolForm"><input formControlName="search" placeholder="BUSCA por um veículo"></form>
+  </span>
+</nav>

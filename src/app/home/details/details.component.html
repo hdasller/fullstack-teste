@@ -1,0 +1,40 @@
+<div class="card" style="width: 18rem;">
+  <div *ngIf="vehicle" class="card-body">
+    <div class="title row">
+      <p class="card-text">{{vehicle.node.modelo}}</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="card-text">Marca</p>
+        <p class="card-text">{{vehicle.node.marca}}</p>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">Ano Modelo</p>
+        <p class="card-text">{{vehicle.node.ano_modelo}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="card-text">Ano Fabricação</p>
+        <p class="card-text">{{vehicle.node.ano_fabricacao}}</p>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">Combustível</p>
+        <p class="card-text">{{vehicle.node.combustivel}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="card-text">Cor</p>
+        <p class="card-text">{{vehicle.node.cor}}</p>
+      </div>
+      <div class="col-sm-6">
+        <p class="card-text">Usado</p>
+        <p class="card-text">{{vehicle.node.usado}}</p>
+      </div>
+    </div>
+    <div>
+      <button type="button" (click)="goUpdate(vehicle.node)" name="button">Alterar</button>
+    </div>
+  </div>
+</div>

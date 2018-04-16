@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body ">
+      <div class="col-sm-9">
+        <p class="card-text">{{vehicle.node.marca}}</p>
+        <p class="card-text">{{vehicle.node.modelo}}</p>
+        <p class="card-text">{{vehicle.node.ano}}</p>
+      </div>
+      <div class="col-sm-3">
+        <span (click)="deleteVehicle(vehicle.node._id)"><i class="fas fa-tag"></i></span>
+      </div>
+  </div>
+</div>

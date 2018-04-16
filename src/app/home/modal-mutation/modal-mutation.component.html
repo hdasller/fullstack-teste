@@ -1,0 +1,54 @@
+<h1 mat-dialog-title *ngIf="!isUpdate">Novo veículo</h1>
+<h1 mat-dialog-title *ngIf="isUpdate">Alterar veículo</h1>
+
+<div mat-dialog-content>
+  <form  #formModal='ngForm' (ngSubmit)="send()">
+      <div class="row">
+          <div class="col-sm-6">
+
+            <input matInput name="_id" ngModel hidden >
+
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Modelo" name="modelo" ngModel required >
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Marca" name="marca" ngModel required >
+            </mat-form-field>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Ano Modelo" name="ano_modelo" type="number" ngModel required >
+          </mat-form-field>
+        </div>
+          <div class="col-sm-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Ano Fabricação"  type="number" name="ano_fabricacao"  ngModel required>
+            </mat-form-field>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width">
+          <input matInput placeholder="Combustível" name="combustivel" ngModel required>
+        </mat-form-field>
+        </div>
+          <div class="col-sm-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Cor" name="cor" ngModel required>
+            </mat-form-field>
+          </div>
+      </div>
+      <div class="row">
+          <mat-slide-toggle name="usado" ngModel required >Usado ?</mat-slide-toggle>
+      </div>
+    </form>
+  <div class="modal-footer">
+    <button *ngIf="isUpdate" type="submit" class="btn btn-outline-dark" (click)="update(formModal.value)">Alterar</button>
+    <button *ngIf="!isUpdate" type="submit" class="btn btn-outline-dark" (click)="create(formModal.value)">Criar</button>
+    <button type="button" class="btn btn-outline-dark"  (click)="close()">Close</button>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<router-outlet></router-outlet>
+<app-navbar (hasSearchKey)="filterVehicles($event)"></app-navbar>
+<div class="container">
+  <app-header (create)="createVehicle($event)"></app-header>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h6>Lista de veículos</h6>
+
+      <div class="card" style="width: 18rem;">
+        <div class="search-results" infinite-scroll [infiniteScrollDistance]="2" [scrollWindow]="false" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+          <div class="cards-vehicle" *ngFor="let vehicle of vehicles">
+            <app-list-vehicles [vehicle]="vehicle" (delete)="outputVehicle($event)" (click)="selectVehicle(vehicle)"></app-list-vehicles>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-6">
+      <h6>Detalhes</h6>
+      <app-details (update)="goUpdate($event)" [vehicle]="selectedVehicle"></app-details>
+    </div>
+  </div>
+</div>
